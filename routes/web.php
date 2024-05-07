@@ -23,7 +23,7 @@ use App\Http\Controllers\Users;
 Route::get('/Login', [Login::class, 'index']);
 Route::get('/Login/Register', [Login::class, 'Register']);
 
-Route::get('/Dashboard', [Dashboard::class, 'index']);
+Route::get('/dashboard', [Dashboard::class, 'index']);
 
 Route::get('/Buku', [Buku::class, 'index']);
 Route::get('/Buku/Tambah', [Buku::class, 'Tambah']);
