@@ -37,5 +37,9 @@ class ModelBuku extends Model
         ->delete();
     }
 
+    public function jumlahbuku(){
+        return DB::table('tbl_buku')->count();
+    }
+
         
 }

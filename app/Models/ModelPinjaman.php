@@ -36,6 +36,10 @@ class ModelPinjaman extends Model
         ->where('id_pinjaman', $id_pinjaman)
         ->delete();
     }
+    public function jumlahpinjaman()
+    {
+        return DB::table('tbl_pinjaman')->count();
+    }
 
         
 }

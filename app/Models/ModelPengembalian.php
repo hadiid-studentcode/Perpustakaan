@@ -36,6 +36,10 @@ class ModelPengembalian extends Model
         ->where('id_pengembalian', $id_pengembalian)
         ->delete();
     }
+    public function jumlahpengembalian()
+    {
+        return DB::table('tbl_pengembalian')->count();
+    }
 
         
 }

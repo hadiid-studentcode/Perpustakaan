@@ -37,5 +37,10 @@ class ModelRak extends Model
         ->delete();
     }
 
+    public function jumlahrak()
+    {
+        return DB::table('tbl_rak')->count();
+    }
+
         
 }
