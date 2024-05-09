@@ -20,6 +20,11 @@ use App\Http\Controllers\Users;
 |
 */
 
+Route::get('/', function () {
+    return redirect('/Login');
+});
+
+
 Route::get('/Login', [Login::class, 'index']);
 Route::get('/Login/Register', [Login::class, 'Register']);
 

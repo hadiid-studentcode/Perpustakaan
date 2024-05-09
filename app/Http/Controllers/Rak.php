@@ -35,7 +35,7 @@ class Rak extends BaseController
     public function Insert()
     {
         Request()->validate([
-            'Rak'=> 'required',
+            'rak'=> 'required',
             
        ], [
             'rak.required' => 'Kode Buku Wajib di Isi !!',
@@ -45,6 +45,9 @@ class Rak extends BaseController
        $data = [
         'rak' => Request()->rak,
        ];
+
+     
+
        $this->ModelRak->addData($data);
        return redirect()->to('/Rak')->with('pesan', 'Data Berhasil Ditambah !!!');
     }

@@ -17,7 +17,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Rak</label>
-                                        <input name="Rak" class="form-control" value="{{ old('rak') }}">
+                                        <input name="rak" class="form-control" value="{{ old('rak') }}">
                                         <div class="text-danger">
                                             @error('rak')
                                             {{ $message }}
