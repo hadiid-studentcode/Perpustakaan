@@ -87,9 +87,9 @@
 
             <li class="nav-header">Setting</li>
             <li class="nav-item">
-                <a href="/Users" class="nav-link {{ request()->is('Users') ? 'active' : ''}}">
+                <a href="/Settings" class="nav-link {{ request()->is('Settings') ? 'active' : ''}}">
                     <i class="nav-icon fas fa-users"></i>
-                    <p>Users</p>
+                    <p>Settings</p>
                 </a>
             </li>
         </ul>

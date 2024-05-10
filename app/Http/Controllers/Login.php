@@ -95,4 +95,10 @@ class Login extends BaseController
 
         return redirect('/');
     }
+    public function settings(){
+        return view('v_settings')
+        ->with('judul', 'Settings')
+        ->with('subjudul', 'Settings')
+        ;
+    }
 }
