@@ -28,6 +28,8 @@ Route::get('/', function () {
 Route::get('/Login', [Login::class, 'index']);
 Route::get('/Login/Register', [Login::class, 'Register']);
 Route::post('/Login/Register', [Login::class, 'registerData']);
+Route::get('/Settings', [Login::class, 'settings']);
+
 
 
 Route::get('/Dashboard', [Dashboard::class, 'index']);
