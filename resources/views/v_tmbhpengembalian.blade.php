@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 @section('content')
-<section class="content">
+<!-- <section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <h3 class="card-title">{{ $judul }}</h3>
                     </div>
-                    <!-- /.card-header -->
+
                     <form action="/Pengembalian/Insert/" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
@@ -74,5 +74,5 @@
                 </div>
             </div>
         </div>
-</section>
+</section> -->
 @endsection

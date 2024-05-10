@@ -14,7 +14,7 @@
                         @csrf
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-group">
                                         <label>Judul Buku</label>
                                         <input name="judul_buku" class="form-control" value="{{ $pengembalian->judul_buku }}">
@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-group">
                                         <label>nama peminjam</label>
                                         <input name="nama_peminjam" class="form-control" value="{{ $pengembalian->nama_peminjam }}">
@@ -38,7 +38,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                            </div>
+                            <div class="row">
+                            <div class="col-12">
                                     <div class="form-group">
                                         <label>no hp</label>
                                         <input name="no_hp" class="form-control" value="{{ $pengembalian->no_hp }}">
@@ -51,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-group">
                                         <label>Tanggal peminjaman</label>
                                         <input type="date" name="tgl_pengembalian" class="form-control"
@@ -64,10 +66,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="/Buku" class="btn btn-success btn-blok">Kembali</a>
-                            </div>
                         </div>
                     </form>
 

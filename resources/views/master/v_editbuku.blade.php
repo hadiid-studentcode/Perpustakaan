@@ -86,10 +86,10 @@
                                     </div>
                                 </dv>
                             </div>
-                            <div class="card-footer">
+          
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="/Buku" class="btn btn-success btn-blok">Kembali</a>
-                            </div>
+
                         </div>
                     </form>
 

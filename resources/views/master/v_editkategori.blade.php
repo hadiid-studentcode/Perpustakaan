@@ -26,10 +26,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
+
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="/Kategori" class="btn btn-success btn-blok">Kembali</a>
-                            </div>
+
                         </div>
                     </form>
 

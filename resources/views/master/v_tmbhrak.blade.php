@@ -8,7 +8,6 @@
                     <div class="card-header">
                         <h3 class="card-title">{{ $judul }}</h3>
                     </div>
-                    <!-- /.card-header -->
                     <form action="/Rak/Insert/" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
