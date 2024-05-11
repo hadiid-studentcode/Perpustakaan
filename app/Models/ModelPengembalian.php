@@ -8,9 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class ModelPengembalian extends Model
 {
+
+
+    protected $fillable = [
+        'judul_buku',
+        'nama_peminjam',
+        'no_hp',
+        'tgl_pengembalian',
+    ];
+
+    protected $primaryKey = 'id';
+    protected $table = 'tbl_pengembalian';
+
+
     public function allData()
     {
-       return DB::table('tbl_pengembalian')->get();
+        return DB::table('tbl_pengembalian')->get();
     }
 
     public function detailData($id_pengembalian)
@@ -23,23 +36,21 @@ class ModelPengembalian extends Model
         DB::table('tbl_pengembalian')->Insert($data);
     }
 
-    public function editData($id_pengembalian ,$data)
+    public function editData($id_pengembalian, $data)
     {
         DB::table('tbl_pengembalian')
-        ->where('id_pengembalian', $id_pengembalian)
-        ->update($data);
+            ->where('id_pengembalian', $id_pengembalian)
+            ->update($data);
     }
 
     public function deleteData($id_pengembalian)
     {
         DB::table('tbl_pengembalian')
-        ->where('id_pengembalian', $id_pengembalian)
-        ->delete();
+            ->where('id_pengembalian', $id_pengembalian)
+            ->delete();
     }
     public function jumlahpengembalian()
     {
         return DB::table('tbl_pengembalian')->count();
     }
-
-        
 }

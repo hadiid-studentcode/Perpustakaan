@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ModelKategori extends Model
 {
+
+
+    protected $fillable = [
+        'kategori'
+    ];
+
+    protected $primaryKey = 'id';
+    protected $table = 'tbl_kategori';
+
+
     public function allData()
     {
        return DB::table('tbl_kategori')->get();

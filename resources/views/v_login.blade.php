@@ -26,12 +26,13 @@
                         <h1>PERPUSTAKAAN SD 01 MINAS TIMUR</h1>
                     </div>
                     <div class="card-body">
-                        <form action="{{asset ('AdminLTE/')}}/index3.html" method="post">
+                        <form action="{{url('Login/auth')}}" method="post">
+                            @csrf
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Email" required>
+                                <input type="text" class="form-control" placeholder="Username" name="name" required>
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <input type="password" class="form-control" placeholder="Password" name="password" required>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>

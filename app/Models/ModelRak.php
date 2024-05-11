@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ModelRak extends Model
 {
+
+
+    protected $fillable = [
+        'rak',
+    ];
+
+    protected $primaryKey = 'id';
+    protected $table = 'tbl_rak';
+
+
     public function allData()
     {
        return DB::table('tbl_rak')->get();

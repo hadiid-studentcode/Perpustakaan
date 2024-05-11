@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ModelPinjaman extends Model
 {
+
+
+    protected $fillable = [
+         'judul_buku', 'nama_peminjam', 'no_hp', 'tgl_peminjaman',
+    ];
+
+    protected $primaryKey = 'id';
+    protected $table = 'tbl_pinjaman';
+
+
     public function allData()
     {
        return DB::table('tbl_pinjaman')->get();

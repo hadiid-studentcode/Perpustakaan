@@ -15,7 +15,8 @@ class Login extends BaseController
 
     protected $users;
 
-    public function __construct(User $users){
+    public function __construct(User $users)
+    {
 
         $this->users = $users;
     }
@@ -40,20 +41,35 @@ class Login extends BaseController
 
     public function authenticate(Request $request): RedirectResponse
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        try {
+            $credentials = $request->validate([
+                'name' => ['required'],
+                'password' => ['required'],
+            ]);
 
-            return redirect()->intended('dashboard');
+
+
+
+
+            if (Auth::attempt($credentials)) {
+
+
+
+                $request->session()->regenerate();
+
+                return redirect()->intended('/Dashboard');
+            }
+
+
+
+            return back()->withErrors([
+                'message' => 'Login Gagal',
+
+            ]);
+        } catch (\Throwable $th) {
+            dd($th->getMessage());
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
     }
 
     public function registerData(Request $request)
@@ -63,20 +79,17 @@ class Login extends BaseController
 
             if ($request->password == $request->passwordRetype) {
 
-              $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
-              ];
+                $data = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password),
+                ];
 
-              $this->users->getData($data);
+                $this->users->getData($data);
 
-              return back()->with('success', 'Register Berhasil');
-
-
-
+                return back()->with('success', 'Register Berhasil');
             } else {
-               return back()->with('error', 'Password Tidak Sama');
+                return back()->with('error', 'Password Tidak Sama');
             }
         } catch (Exception $e) {
             return back()->with('error', 'Terjadi Kesalahan');
@@ -95,10 +108,39 @@ class Login extends BaseController
 
         return redirect('/');
     }
-    public function settings(){
+    public function settings()
+    {
+
+      
+
+
         return view('v_settings')
-        ->with('judul', 'Settings')
-        ->with('subjudul', 'Settings')
-        ;
+            ->with('judul', 'Settings')
+            ->with('subjudul', 'Settings')
+            ->with('username', Auth::user()->name)
+            ->with('email', Auth::user()->email);
+    }
+
+    public function updateUser(Request $request){
+
+
+        try {
+
+            $data = [
+                'name' => $request->username,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+            ];
+            
+            $this->users->updateData($data, Auth::user()->id);
+
+            return back()->with('success', 'Update Berhasil');
+
+        } catch (\Throwable $th) {
+
+            return back()->with('error', 'Terjadi Kesalahan');
+        }
+
+
     }
 }
