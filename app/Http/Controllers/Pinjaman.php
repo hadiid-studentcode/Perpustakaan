@@ -100,6 +100,8 @@ class Pinjaman extends BaseController
 
     public function Delete($id_pinjaman)
     {
+
+
         $this->ModelPinjaman->deleteData($id_pinjaman);
         return redirect()->to('/Pinjaman')->with('update', 'Data Berhasil Dihapus !!!');
     }
