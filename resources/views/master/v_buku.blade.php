@@ -88,8 +88,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <form action="/Buku/Insert/" method="POST">
+            </div> 
+            <form action="{{ url('/Buku/Insert') }}" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
                         <div class="card-body">

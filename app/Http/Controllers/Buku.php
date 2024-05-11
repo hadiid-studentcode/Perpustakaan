@@ -81,14 +81,12 @@ class Buku extends BaseController
     public function update($id_buku)
     {
         Request()->validate([
-            'kd_buku'=> 'required|unique:tbl_buku,kd_buku',
             'judul_buku'=> 'required',
             'pengarang'=> 'required',
             'penerbit'=> 'required',
             'thn_terbit'=> 'required',
             'tebal_buku'=> 'required',
        ], [
-            'kd_buku.required' => 'Kode Buku Wajib di Isi !!',
             'kd_buku.unique' => 'Kode Buku Ini Sudah Ada !!',
             'judul_buku.required' => ' Wajib di Isi !!',
             'pengarang.required' => ' Wajib di Isi !!',
@@ -100,7 +98,6 @@ class Buku extends BaseController
        ]);
 
        $data = [
-        'id_buku' => $id_buku,
         'kd_buku' => Request()->kd_buku,
         'judul_buku' => Request()->judul_buku,
         'pengarang' => Request()->pengarang,
@@ -108,6 +105,8 @@ class Buku extends BaseController
         'thn_terbit' => Request()->thn_terbit,
         'tebal_buku' => Request()->tebal_buku
     ];
+
+
     $this->ModelBuku->editData($id_buku, $data);
     return redirect()->to('/Buku')->with('update', 'Data Berhasil Diedit !!!');
  }
