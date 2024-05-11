@@ -54,7 +54,7 @@ class Pengembalian extends BaseController
        $data = [
         'judul_buku' => Request()->judul_buku,
         'nama_peminjam' => Request()->nama_peminjam,
-        'tgl_pengembalian' => Request()->tgl_peminjam,
+        'tgl_pengembalian' => Request()->tgl_pengembalian,
         'no_hp' => Request()->no_hp,
     
        ];

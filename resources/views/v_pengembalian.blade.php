@@ -1,7 +1,6 @@
 @extends('layout.v_template')
 @section('content')
-
-<section class="content">
+    <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -9,7 +8,8 @@
                         <div class="card-header">
                             <h3 class="card-title">{{ $judul }}</h3>
                             <div class="card-tools">
-                                <a href="#" class="btn btn-success btn-block float-right" data-toggle="modal" data-target="#tambahModal">Tambah</a>
+                                <a href="#" class="btn btn-success btn-block float-right" data-toggle="modal"
+                                    data-target="#tambahModal">Tambah</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -28,17 +28,20 @@
                                 <tbody>
                                     <?php $no = 1; ?>
                                     @foreach ($pengembalian as $data)
-                                    <tr>
-                                        <td class="text-center">{{ $no++ }}</td>
-                                        <td>{{ $data->judul_buku }}</td>
-                                        <td>{{ $data->nama_peminjam }}</td>
-                                        <td>{{ $data->no_hp }}</td>
-                                        <td>{{ $data->tgl_pengembalian }}</td>
-                                        <td class="text-center">
-                                            <a href="/Pengembalian/Edit/{{ $data->id_pengembalian }}" class="btn btn-warning btn-block">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-block" onclick="prepareDelete('{{ $data->id_pengembalian }}')" data-toggle="modal" data-target="#hapusModal">Hapus</a>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td class="text-center">{{ $no++ }}</td>
+                                            <td>{{ $data->judul_buku }}</td>
+                                            <td>{{ $data->nama_peminjam }}</td>
+                                            <td>{{ $data->no_hp }}</td>
+                                            <td>{{ $data->tgl_pengembalian }}</td>
+                                            <td class="text-center">
+                                                <a href="/Pengembalian/Edit/{{ $data->id_pengembalian }}"
+                                                    class="btn btn-warning btn-block">Edit</a>
+                                                <a href="#" class="btn btn-danger btn-block"
+                                                    onclick="prepareDelete('{{ $data->id_pengembalian }}')"
+                                                    data-toggle="modal" data-target="#hapusModal">Hapus</a>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -50,7 +53,8 @@
     </section>
 
     <!-- Modal Tambah Pengembalian -->
-    <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="tambahModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="tambahModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +64,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/Pengembalian/Insert/" method="POST">
+
+
+                    <form action="{{ url('/Pengembalian/Insert') }}" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
                         <div class="card-body">
@@ -71,7 +77,7 @@
                                         <input name="judul_buku" class="form-control" value="{{ old('judul_buku') }}">
                                         <div class="text-danger">
                                             @error('judul_buku')
-                                            {{ $message }}
+                                                {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
@@ -81,10 +87,11 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Nama Peminjam</label>
-                                        <input name="nama_peminjam" class="form-control" value="{{ old('nama_peminjam') }}">
+                                        <input name="nama_peminjam" class="form-control"
+                                            value="{{ old('nama_peminjam') }}">
                                         <div class="text-danger">
                                             @error('nama_peminjam')
-                                            {{ $message }}
+                                                {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
@@ -97,7 +104,7 @@
                                         <input name="no_hp" class="form-control" value="{{ old('no_hp') }}">
                                         <div class="text-danger">
                                             @error('no_hp')
-                                            {{ $message }}
+                                                {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
@@ -107,17 +114,18 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Tanggal Pengembalian</label>
-                                        <input type="date" name="tgl_pengembalian" class="form-control" value="{{ old('tgl_pengembalian') }}">
+                                        <input type="date" name="tgl_pengembalian" class="form-control" name="tgl_pengembalian"
+                                            value="{{ old('tgl_pengembalian') }}">
                                         <div class="text-danger">
                                             @error('tgl_pengembalian')
-                                            {{ $message }}
+                                                {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="/Buku" class="btn btn-success btn-blok">Kembali</a>
+                            <a href="/Buku" class="btn btn-success btn-blok">Kembali</a>
                         </div>
                     </form>
                 </div>
@@ -126,7 +134,8 @@
     </div>
 
     <!-- Modal Konfirmasi Hapus -->
-    <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="hapusModalLabel" aria-hidden="true">
+    <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="hapusModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
