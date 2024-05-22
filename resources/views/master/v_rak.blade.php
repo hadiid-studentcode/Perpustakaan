@@ -53,8 +53,8 @@
                                         <td class="text-center">{{ $no++ }}</td>
                                         <td>{{ $data->rak }}</td>
                                         <td class="text-center">
-                                            <a href="/Rak/Edit/{{ $data->id_rak }}" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-hapus" data-id="{{ $data->id_rak }}">Hapus</a>
+                                            <a href="/Rak/Edit/{{ $data->id }}" class="btn btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-hapus" data-id="{{ $data->id }}">Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach

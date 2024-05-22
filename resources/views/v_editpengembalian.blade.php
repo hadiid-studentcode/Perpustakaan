@@ -9,7 +9,7 @@
                         <h3 class="card-title">{{ $judul }}</h3>
                     </div>
                     <!-- /.card-header -->
-                    <form action="/Pengembalian/update/{{$pengembalian->id_pengembalian}}" method="POST">
+                    <form action="/Pengembalian/update/{{$pengembalian->id}}" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
                         <div class="card-body">

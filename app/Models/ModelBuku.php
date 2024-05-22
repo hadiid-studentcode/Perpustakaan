@@ -30,7 +30,7 @@ class ModelBuku extends Model
 
     public function detailData($id_buku)
     {
-        return DB::table('tbl_buku')->where('id_buku', $id_buku)->first();
+        return DB::table('tbl_buku')->where('id', $id_buku)->first();
     }
 
     public function addData($data)
@@ -41,14 +41,14 @@ class ModelBuku extends Model
     public function editData($id_buku, $data)
     {
         DB::table('tbl_buku')
-            ->where('id_buku', $id_buku)
+            ->where('id', $id_buku)
             ->update($data);
     }
 
     public function deleteData($id_buku)
     {
         DB::table('tbl_buku')
-            ->where('id_buku', $id_buku)
+            ->where('id', $id_buku)
             ->delete();
     }
 

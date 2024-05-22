@@ -65,8 +65,8 @@
                                     <td class="text-center">{{ $data->thn_terbit }}</td>
                                     <td class="text-center">{{ $data->tebal_buku }}</td>
                                     <td class="text-center">
-                                        <a href="/Buku/Edit/{{ $data->id_buku }}" class="btn btn-warning ">Edit</a>
-                                        <a href="/Buku/Delete/{{ $data->id_buku }}" class="btn btn-danger ">Hapus</a>
+                                        <a href="/Buku/Edit/{{ $data->id }}" class="btn btn-warning ">Edit</a>
+                                        <a href="/Buku/Delete/{{ $data->id }}" class="btn btn-danger ">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -97,7 +97,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Kode Buku</label>
-                                        <input name="kd_buku" class="form-control" value="{{ old('kd_buku') }}">
+                                        <input name="kd_buku" class="form-control" value="{{ old('kd_buku') }}"required>
                                         <div class="text-danger">
                                             @error('kd_buku')
                                             {{ $message }}
@@ -108,7 +108,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Judul Buku</label>
-                                        <input name="judul_buku" class="form-control" value="{{ old('judul_buku') }}">
+                                        <input name="judul_buku" class="form-control" value="{{ old('judul_buku') }}" required>
                                         <div class="text-danger">
                                             @error('judul_buku')
                                             {{ $message }}

@@ -73,7 +73,7 @@ class Rak extends BaseController
        ]);
 
        $data = [
-        'id_rak' => $id_rak,
+       
         'rak' => Request()->rak,
     ];
     $this->ModelRak->editData($id_rak, $data);

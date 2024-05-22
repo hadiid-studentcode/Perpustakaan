@@ -25,7 +25,7 @@ class ModelRak extends Model
 
     public function detailData($id_rak)
     {
-        return DB::table('tbl_rak')->where('id_rak', $id_rak)->first();
+        return DB::table('tbl_rak')->where('id', $id_rak)->first();
     }
 
     public function addData($data)
@@ -36,14 +36,14 @@ class ModelRak extends Model
     public function editData($id_rak ,$data)
     {
         DB::table('tbl_rak')
-        ->where('id_rak', $id_rak)
+        ->where('id', $id_rak)
         ->update($data);
     }
 
     public function deleteData($id_rak)
     {
         DB::table('tbl_rak')
-        ->where('id_rak', $id_rak)
+        ->where('id', $id_rak)
         ->delete();
     }
 

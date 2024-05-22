@@ -54,7 +54,7 @@ class Pinjaman extends BaseController
        $data = [
         'judul_buku' => Request()->judul_buku,
         'nama_peminjam' => Request()->nama_peminjam,
-        'tgl_peminjam' => Request()->tgl_peminjam,
+        'tgl_peminjaman' => Request()->tgl_peminjam,
         'no_hp' => Request()->no_hp,
     
        ];
@@ -87,10 +87,10 @@ class Pinjaman extends BaseController
        ]);
 
        $data = [
-        'id_pinjaman' => $id_pinjaman,
+      
         'judul_buku' => Request()->judul_buku,
         'nama_peminjam' => Request()->nama_peminjam,
-        'tgl_peminjam' => Request()->tgl_peminjam,
+        'tgl_peminjaman' => Request()->tgl_peminjam,
         'no_hp' => Request()->no_hp,
     
        ];

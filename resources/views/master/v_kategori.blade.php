@@ -51,8 +51,8 @@
                                             <td class="text-center">{{ $no++ }}</td>
                                             <td>{{ $data->kategori }}</td>
                                             <td class="text-center">
-                                                <a href="/Kategori/Edit/{{ $data->id_kategori }}" class="btn btn-warning ">Edit</a>
-                                                <a href="#" class="btn btn-danger btn-hapus" data-id="{{ $data->id_kategori }}">Hapus</a>
+                                                <a href="/Kategori/Edit/{{ $data->id }}" class="btn btn-warning ">Edit</a>
+                                                <a href="#" class="btn btn-danger btn-hapus" data-id="{{ $data->id }}">Hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach

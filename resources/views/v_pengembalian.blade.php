@@ -35,10 +35,10 @@
                                             <td>{{ $data->no_hp }}</td>
                                             <td>{{ $data->tgl_pengembalian }}</td>
                                             <td class="text-center">
-                                                <a href="/Pengembalian/Edit/{{ $data->id_pengembalian }}"
+                                                <a href="/Pengembalian/Edit/{{ $data->id }}"
                                                     class="btn btn-warning btn-block">Edit</a>
                                                 <a href="#" class="btn btn-danger btn-block"
-                                                    onclick="prepareDelete('{{ $data->id_pengembalian }}')"
+                                                    onclick="prepareDelete('{{ $data->id }}')"
                                                     data-toggle="modal" data-target="#hapusModal">Hapus</a>
                                             </td>
                                         </tr>
@@ -125,7 +125,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="/Buku" class="btn btn-success btn-blok">Kembali</a>
                         </div>
                     </form>
                 </div>

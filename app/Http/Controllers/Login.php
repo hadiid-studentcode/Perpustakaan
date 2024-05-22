@@ -68,7 +68,7 @@ class Login extends BaseController
 
             ]);
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+          return back();
         }
     }
 

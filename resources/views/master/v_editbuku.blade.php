@@ -9,7 +9,7 @@
                         <h3 class="card-title">{{ $judul }}</h3>
                     </div>
                     <!-- /.card-header -->
-                    <form action="/Buku/update/{{$buku->id_buku}}/" method="POST">
+                    <form action="/Buku/update/{{$buku->id}}/" method="POST">
                         {{-- Syntax keamanan laravel untuk form --}}
                         @csrf
                         <div class="card-body">
@@ -17,7 +17,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Kode Buku</label>
-                                        <input name="kd_buku" class="form-control" value="{{ $buku->kd_buku }}">
+                                        <input name="kd_buku" class="form-control" value="{{ $buku->id }}">
                                         <div class="text-danger">
                                             @error('kd_buku')
                                             {{ $message }}

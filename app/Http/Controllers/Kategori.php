@@ -71,7 +71,7 @@ class Kategori extends BaseController
        ]);
 
        $data = [
-        'id_kategori' => $id_kategori,
+       
         'kategori' => Request()->kategori,
     ];
     $this->ModelKategori->editData($id_kategori, $data);

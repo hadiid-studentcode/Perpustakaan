@@ -33,14 +33,14 @@
                                         <td>{{ $data->judul_buku }}</td>
                                         <td>{{ $data->nama_peminjam }}</td>
                                         <td>{{ $data->no_hp }}</td>
-                                        <td>{{ $data->tgl_peminjam }}</td>
+                                        <td>{{ $data->tgl_peminjaman }}</td>
                                         <td class="text-center">
-                                            <a href="/Pinjaman/Edit/{{ $data->id_pinjaman }}"
+                                            <a href="/Pinjaman/Edit/{{ $data->id }}"
                                                 class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a>
                                             <button class="btn btn-danger btn-sm btn-hapus" data-toggle="modal"
-                                                data-target="#konfirmasiModal" data-id="{{ $data->id_pinjaman }}">
+                                                data-target="#konfirmasiModal" data-id="{{ $data->id }}">
                                                 <i class="fas fa-trash-alt"></i> Hapus
                                             </button>
 
@@ -67,7 +67,7 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-dismiss="modal">Batal</button>
                                                             <form method="GET"
-                                                                action="{{ url('/Pinjaman/Delete/' . $data->id_pinjaman) }}">
+                                                                action="{{ url('/Pinjaman/Delete/' . $data->id) }}">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>

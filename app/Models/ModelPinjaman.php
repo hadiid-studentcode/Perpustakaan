@@ -25,25 +25,28 @@ class ModelPinjaman extends Model
 
     public function detailData($id_pinjaman)
     {
-        return DB::table('tbl_pinjaman')->where('id_pinjaman', $id_pinjaman)->first();
+        return DB::table('tbl_pinjaman')->where('id', $id_pinjaman)->first();
     }
 
     public function addData($data)
     {
+
+       
+
         DB::table('tbl_pinjaman')->insert($data);
     }
 
     public function editData($id_pinjaman ,$data)
     {
         DB::table('tbl_pinjaman')
-        ->where('id_pinjaman', $id_pinjaman)
+        ->where('id', $id_pinjaman)
         ->update($data);
     }
 
     public function deleteData($id_pinjaman)
     {
         DB::table('tbl_pinjaman')
-        ->where('id_pinjaman', $id_pinjaman)
+        ->where('id', $id_pinjaman)
         ->delete();
     }
     public function jumlahpinjaman()

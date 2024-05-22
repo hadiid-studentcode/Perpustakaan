@@ -28,7 +28,10 @@ class ModelPengembalian extends Model
 
     public function detailData($id_pengembalian)
     {
-        return DB::table('tbl_pengembalian')->where('id_pengembalian', $id_pengembalian)->first();
+
+        return DB::table('tbl_pengembalian')->where('id', $id_pengembalian)->first();
+
+
     }
 
     public function addData($data)
@@ -39,14 +42,16 @@ class ModelPengembalian extends Model
     public function editData($id_pengembalian, $data)
     {
         DB::table('tbl_pengembalian')
-            ->where('id_pengembalian', $id_pengembalian)
+            ->where('id', $id_pengembalian)
             ->update($data);
     }
 
     public function deleteData($id_pengembalian)
     {
+
+
         DB::table('tbl_pengembalian')
-            ->where('id_pengembalian', $id_pengembalian)
+            ->where('id', $id_pengembalian)
             ->delete();
     }
     public function jumlahpengembalian()

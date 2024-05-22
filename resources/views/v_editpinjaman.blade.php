@@ -10,7 +10,7 @@
                         <h3 class="card-title">{{ $judul }}</h3>
                     </div>
                     <!-- /.card-header -->
-                    <form action="/Pinjaman/update/{{$pinjaman->id_pinjaman}}" method="POST">
+                    <form action="/Pinjaman/update/{{$pinjaman->id}}" method="POST">
                         {{-- Laravel form security syntax --}}
                         @csrf
                         <div class="card-body">
@@ -58,7 +58,7 @@
                                     <div class="form-group">
                                         <label>Tanggal Peminjaman</label>
                                         <input type="date" name="tgl_peminjam" class="form-control"
-                                            value="{{ $pinjaman->tgl_peminjam }}">
+                                            value="{{ $pinjaman->tgl_peminjaman }}">
                                         <div class="text-danger">
                                             @error('tgl_peminjam')
                                                 {{ $message }}

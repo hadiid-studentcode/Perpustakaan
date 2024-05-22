@@ -19,6 +19,7 @@ class Pengembalian extends BaseController
     
     public function index()
     {
+
         $data = [
             'judul' => 'Halaman pengembalian',
             'subjudul'    => 'Tampilan Data pengembalian',
@@ -29,6 +30,8 @@ class Pengembalian extends BaseController
 
     public function Tambah()
     {
+       
+
         $data = [
             'judul' => 'Halaman Tambah pengembalian',
             'subjudul'    => 'Tampilan Tambah pengembalian'
@@ -38,6 +41,10 @@ class Pengembalian extends BaseController
 
     public function Insert()
     {
+
+    
+
+
         Request()->validate([
             'judul_buku'=> 'required',
             'nama_peminjam'=> 'required',
@@ -88,7 +95,7 @@ class Pengembalian extends BaseController
        ]);
 
        $data = [
-        'id_pengembalian' => $id_pengembalian,
+     
         'judul_buku' => Request()-> judul_buku,
         'nama_peminjam' => Request()-> nama_peminjam,
         'tgl_pengembalian' => Request()-> tgl_pengembalian,

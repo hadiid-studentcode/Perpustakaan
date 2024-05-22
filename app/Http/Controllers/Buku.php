@@ -28,6 +28,9 @@ class Buku extends BaseController
 
     public function Tambah()
     {
+
+       
+
         $data = [
             'judul' => 'Halaman Tambah Buku',
             'subjudul'    => 'Tampilan Tambah Buku'
@@ -37,6 +40,10 @@ class Buku extends BaseController
 
     public function Insert()
     {
+
+      
+
+
         Request()->validate([
             'kd_buku'=> 'required|unique:tbl_buku,kd_buku',
             'judul_buku'=> 'required',
@@ -70,11 +77,16 @@ class Buku extends BaseController
 
     public function Edit($id_buku)
     {
+
+       
+
         $data = [
             'judul' => 'Halaman Edit Buku',
             'subjudul'    => 'Tampilan Edit Buku',
             'buku' => $this->ModelBuku->detailData($id_buku)
         ];
+
+
         return view('master/v_editbuku', $data);
     }
 
@@ -113,7 +125,8 @@ class Buku extends BaseController
 
  public function Delete($id_buku)
  {
+    
      $this->ModelBuku->deleteData($id_buku);
-     return redirect()->to('/Buku')->with('update', 'Data Berhasil Dihapus !!!');
+     return redirect()->to('/Buku')->with('delete', 'Data Berhasil Dihapus !!!');
     }
 }

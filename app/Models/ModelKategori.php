@@ -25,7 +25,7 @@ class ModelKategori extends Model
 
     public function detailData($id_kategori)
     {
-        return DB::table('tbl_kategori')->where('id_kategori', $id_kategori)->first();
+        return DB::table('tbl_kategori')->where('id', $id_kategori)->first();
     }
 
     public function addData($data)
@@ -36,14 +36,14 @@ class ModelKategori extends Model
     public function editData($id_kategori ,$data)
     {
         DB::table('tbl_kategori')
-        ->where('id_kategori', $id_kategori)
+        ->where('id', $id_kategori)
         ->update($data);
     }
 
     public function deleteData($id_kategori)
     {
         DB::table('tbl_kategori')
-        ->where('id_kategori', $id_kategori)
+        ->where('id', $id_kategori)
         ->delete();
     }
 
